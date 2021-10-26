@@ -8,9 +8,7 @@ export const LoginPage = () => {
     const isDisabled = useSelector(state => state.loginReducer.isDisabled)
     const history = useHistory()
     const dispatch = useDispatch()
-            
-
-    console.log('cyka', isDisabled)
+           
     const inputUsernameRef = useRef(null);
     const inputPWRef = useRef(null);
     const inputButtonRef = useRef(null);
