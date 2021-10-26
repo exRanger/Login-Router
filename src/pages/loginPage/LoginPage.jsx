@@ -1,19 +1,21 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
 import { setIsLogin } from '../../store/actions/loginAction';
 import './index.css'
 
 export const LoginPage = () => {
-    const isLogin = useSelector(state => state.loginReducer.isLogin)
+    const isDisabled = useSelector(state => state.loginReducer.isDisabled)
     const history = useHistory()
     const dispatch = useDispatch()
             
+
+    console.log('cyka', isDisabled)
     const inputUsernameRef = useRef(null);
     const inputPWRef = useRef(null);
     const inputButtonRef = useRef(null);
 
-       
+    
 
 
     let handleChange = (e) => {
@@ -21,23 +23,24 @@ export const LoginPage = () => {
         if (inputUsernameRef.current.value === 'developer21' &&
                 +inputPWRef.current.value === 123456
            ){
-      
+               dispatch(setIsLogin(false))
                
-               dispatch(setIsLogin(true))
+               inputButtonRef.current = false
+               inputButtonRef.current = false
                
            }else{
-               dispatch(setIsLogin(false))
-             
-           }
+               dispatch(setIsLogin(true))
+               inputButtonRef.current.disabled = isDisabled
+               console.log(inputButtonRef.current)
+           } 
    }
 
    let handleSubmit = (e) => { 
        e.preventDefault()
-      
-      
-       
-
+       history.push('/Profile')
+       console.log(e.target)
    }
+   console.log('render')
     return (
         <div>
             <form action="/" onSubmit={handleSubmit}>
@@ -56,13 +59,12 @@ export const LoginPage = () => {
                         <input 
                         name="username" 
                         id="username" 
-                        
                         type="password"
                         ref={inputPWRef}
                         onChange={(e)=> { handleChange(e)}}
                         />
                     </div>
-                    <button onSubmit={handleSubmit} disabled={isLogin} ref={inputButtonRef} className="form__login-button">Login</button>
+                    <button type='submit' disabled={isDisabled} ref={inputButtonRef} className="form__login-button">Login</button>
                 </div>
             </form>
         </div>
