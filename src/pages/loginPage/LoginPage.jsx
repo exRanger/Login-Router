@@ -14,20 +14,18 @@ export const LoginPage = () => {
     const inputButtonRef = useRef(null);
 
     let handleChange = (e) => {
-       
+
         if (inputUsernameRef.current.value === 'developer21' &&
                 +inputPWRef.current.value === 123456
            ){
                dispatch(setIsLogin(false))
-               
                inputButtonRef.current = false
                inputButtonRef.current = false
-               
-           }else{
+        }else{
                dispatch(setIsLogin(true))
                inputButtonRef.current.disabled = isDisabled
                console.log(inputButtonRef.current)
-           } 
+        } 
    }
 
    let handleSubmit = (e) => { 
@@ -35,7 +33,6 @@ export const LoginPage = () => {
        history.push('/Profile')
        console.log(e.target)
    }
-   console.log('render')
     return (
         <div>
             <form action="/" onSubmit={handleSubmit}>
