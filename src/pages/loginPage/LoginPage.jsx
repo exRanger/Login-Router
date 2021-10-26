@@ -13,9 +13,6 @@ export const LoginPage = () => {
     const inputPWRef = useRef(null);
     const inputButtonRef = useRef(null);
 
-    
-
-
     let handleChange = (e) => {
        
         if (inputUsernameRef.current.value === 'developer21' &&
