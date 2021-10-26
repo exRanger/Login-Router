@@ -1,10 +1,8 @@
-
 import { ENABLE_LOGIN_BUTTON } from "../types/loginType"
 
 const initialState = {
     isDisabled: true
 }
-
 
 export const loginReducer = (state = initialState, action) => {
     switch(action.type){
