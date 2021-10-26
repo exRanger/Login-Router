@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    font-family: Tahoma;
+  }
+  
+  .container {
+      margin: 0 auto;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1{
+    text-align: center;
+    color:rgb(43, 137, 245);
+    font-weight: bold;
+    font-size: 32px;
+  }
+  
+  .form-ctrl{
+      
+  }
+  .form-control input{
+     
+    width: 200px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    display: block;
+    border: 1px solid rgb(20, 71, 130);
+}
+ 
+  
+.form__login-button[disabled]{
+    border: 1px solid rgb(175, 212, 255);
+}
+
+  .form__login-button{
+    margin-top: 5px;
+    font-family: Tahoma;
+    background: rgb(102, 173, 255);
+    color: rgb(236, 236, 236);
+    border-radius: 5px;
+    padding: 7px 16px;
+    border: 1px solid rgb(175, 212, 255);
+    align-self: center;
+    cursor: pointer;
+  }
