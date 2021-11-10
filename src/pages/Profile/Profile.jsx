@@ -1,6 +1,6 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-console.log('render')
+
 export const Profile = () => { 
     const history = useHistory()
     
