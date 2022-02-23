@@ -44,7 +44,7 @@ export const LoginPage = () => {
                     </div>
                     <div className="form-control">
                         <label 
-                        htmlFor="Login">Password: </label>
+                            htmlFor="Login">Password: </label>
                         <input 
                             name="username" 
                             id="username" 
