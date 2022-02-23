@@ -26,7 +26,7 @@ export const LoginPage = () => {
         } 
    }
 
-   let handleSubmit = (e) => { 
+   const handleSubmit = (e) => { 
        e.preventDefault()
        history.push('/Profile')
    }
@@ -46,11 +46,11 @@ export const LoginPage = () => {
                         <label 
                         htmlFor="Login">Password: </label>
                         <input 
-                        name="username" 
-                        id="username" 
-                        type="password"
-                        ref={inputPWRef}
-                        onChange={(e)=> { handleChange(e)}}
+                            name="username" 
+                            id="username" 
+                            type="password"
+                            ref={inputPWRef}
+                            onChange={(e)=> { handleChange(e)}}
                         />
                     </div>
                     <button type='submit' disabled={isDisabled} ref={inputButtonRef} className="form__login-button">Login</button>
