@@ -23,14 +23,12 @@ export const LoginPage = () => {
         }else{
                dispatch(setIsLogin(true))
                inputButtonRef.current.disabled = isDisabled
-               console.log(inputButtonRef.current)
         } 
    }
 
    let handleSubmit = (e) => { 
        e.preventDefault()
        history.push('/Profile')
-       console.log(e.target)
    }
     return (
         <div>
